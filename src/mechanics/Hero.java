@@ -1,9 +1,12 @@
 package mechanics;
+import java.util.ArrayList;
 
 public class Hero{
 	public String name;
 	public double current_hp;
 	public double current_mana;
+	public ArrayList<Status> statuses;
+	public ArrayList<Skill> skills;
 	public double strength;
 	public double agillity;
 	public double intelligence;
@@ -30,6 +33,8 @@ public class Hero{
 		this.damage=damage;
 		this.current_hp=hp;
 		this.current_mana=mana;
+		this.statuses= new ArrayList<Status>();
+		this.skills= new ArrayList<Skill>();
 	}
 	public static Hero Doom = new Hero(106.0,33.5,65.5,2688.0,3.43,1020.5,2.63,5.23,0.6675,290,175.0,"Doom");
 	public static Hero Spirit_Breaker = new Hero(89.0,59.5,59.0,2422.0,3.42,949.0,2.37,13.71,0.839473684211,290,159.0,"Spirit_Breaker");

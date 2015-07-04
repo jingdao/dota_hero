@@ -5,7 +5,9 @@ f = open('herostats.json','r')
 data = json.loads(f.read())
 f.close()
 f = open('src/mechanics/Hero.java','w')
-f.write('package mechanics;\n\npublic class Hero{\n')
+f.write('package mechanics;\n')
+f.write('import java.util.ArrayList;\n')
+f.write('\npublic class Hero{\n')
 attributes = [
 	'strength',
 	'agillity',
@@ -22,6 +24,8 @@ attributes = [
 f.write('\tpublic String name;\n')
 f.write('\tpublic double current_hp;\n')
 f.write('\tpublic double current_mana;\n')
+f.write('\tpublic ArrayList<Status> statuses;\n')
+f.write('\tpublic ArrayList<Skill> skills;\n')
 for a in attributes:
 	f.write('\tpublic double '+a+';\n')
 f.write('\tpublic Hero(')
@@ -33,6 +37,8 @@ for a in attributes:
 	f.write('\t\tthis.'+a+'='+a+';\n')
 f.write('\t\tthis.current_hp=hp;\n')
 f.write('\t\tthis.current_mana=mana;\n')
+f.write('\t\tthis.statuses= new ArrayList<Status>();\n')
+f.write('\t\tthis.skills= new ArrayList<Skill>();\n')
 f.write('\t}\n')
 
 for i in data:
