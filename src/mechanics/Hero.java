@@ -5,8 +5,13 @@ public class Hero{
 	public String name;
 	public double current_hp;
 	public double current_mana;
+	public double turn;
 	public ArrayList<Status> statuses;
 	public ArrayList<Skill> skills;
+	public boolean isStunned;
+	public boolean isSleeped;
+	public boolean isSilenced;
+	public boolean isDisarmed;
 	public double strength;
 	public double agillity;
 	public double intelligence;
@@ -33,6 +38,7 @@ public class Hero{
 		this.damage=damage;
 		this.current_hp=hp;
 		this.current_mana=mana;
+		this.turn=0;
 		this.statuses= new ArrayList<Status>();
 		this.skills= new ArrayList<Skill>();
 	}
